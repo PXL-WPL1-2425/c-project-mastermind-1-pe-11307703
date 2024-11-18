@@ -2,6 +2,7 @@
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace Mastermind
@@ -29,7 +30,8 @@ namespace Mastermind
                 int colorNumber = color.Next(1, 7);
                 secretCode.Add(colors[colorNumber - 1]);
             }
-            Title = "Mastermind Code: " + string.Join(", ", secretCode) + $" | Poging: {attempts}";
+            Toggledebug();
+
         }
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -202,6 +204,23 @@ namespace Mastermind
                 _ => null
             };
         }
-    }
 
+        private void Toggledebug()
+        {
+            cheatCode.Text = $"{secretCode}";
+            
+        }
+
+        
+         private void cheatCode_KeyDown(object sender, KeyEventArgs e)
+         {
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.F12)
+            {
+                
+                cheatCode.Visibility = Visibility.Visible;
+                
+            }
+         }
+    }
+    
 }

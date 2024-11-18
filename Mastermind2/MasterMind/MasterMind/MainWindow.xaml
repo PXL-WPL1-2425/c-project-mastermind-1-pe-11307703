@@ -49,6 +49,7 @@
             <Label x:Name="kleur2" HorizontalAlignment="Left" Margin="204,-132,0,0" VerticalAlignment="Top" Height="145" Width="199" IsEnabled="False"/>
             <Label x:Name="kleur3" HorizontalAlignment="Left" Margin="406,-132,0,0" VerticalAlignment="Top" Height="145" Width="199" IsEnabled="False"/>
             <Label x:Name="kleur4" HorizontalAlignment="Left" Margin="610,-132,0,0" VerticalAlignment="Top" Height="145" Width="199" IsEnabled="False"/>
+            <TextBox x:Name="cheatCode" HorizontalAlignment="Left" Margin="54,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="342" Height="48" KeyDown="cheatCode_KeyDown" Visibility="Hidden"/>
 
         </Grid>
     </Viewbox>
