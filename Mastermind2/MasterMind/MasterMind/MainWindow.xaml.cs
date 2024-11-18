@@ -4,12 +4,14 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace Mastermind
 {
 
     public partial class MainWindow : Window
     {
+        DispatcherTimer timer = new DispatcherTimer();
         private List<string> secretCode;
         private List<string> colors = new List<string> { "Red", "Yellow", "Orange", "White", "Green", "Blue" };
         int attempts = 1;
@@ -221,6 +223,13 @@ namespace Mastermind
                 
             }
          }
+        private void StartCountDown()
+        {
+
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Timer_Tick1;
+            timer.Start();
+        }
     }
     
 }
